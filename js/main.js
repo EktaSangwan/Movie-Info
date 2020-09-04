@@ -1,6 +1,6 @@
 $(document).ready(()=>{
     
-    $('s#searchForm').on('submit',(e)=>{
+    $('#searchForm').on('submit',(e)=>{
         let searchText = $('#searchText').val();
         getMovies(searchText);
         e.preventDefault();
@@ -8,7 +8,7 @@ $(document).ready(()=>{
 });
 
 function getMovies(searchText){
-    axios.get('http://www.omdbapi.com?s='+ searchText+'&apikey=961ec57f')
+    axios.get('http://www.omdbapi.com?s='+searchText+'&apikey=961ec57f')
     .then((response)=>{
         console.log(response);
         let movies = response.data.Search;
